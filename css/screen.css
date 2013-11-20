@@ -780,6 +780,7 @@ body {
   line-height: 1.5;
   background-color: #d9d9d1;
   overflow-x: hidden;
+  background-color: #fff;
 }
 
 /* line 57, ../sass/partials/_typography.scss */
@@ -2643,3 +2644,4 @@ footer hr {
     clear: left;
   }
 }
+

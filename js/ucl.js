@@ -34,9 +34,10 @@ $(document).ready(function(){
 viewsource = function () {
 
 	var patternhtml = $('body').html().replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
+																		.replace(/\t/g, '  ')
 																		.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>');
 	
-	$('body').empty().append( '<pre>' + patternhtml + '</pre>' );
+	$('body').addClass('view-source').empty().append( '<pre>' + patternhtml + '</pre>' );
 
 };
 

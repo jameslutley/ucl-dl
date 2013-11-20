@@ -1,0 +1,15 @@
+/* View Source styles */
+
+.view-source {
+	padding: 5%;
+}
+
+.view-source pre {
+	font-family: Consolas,"Bitstream Vera Sans Mono","Andale Mono",Monaco,"DejaVu Sans Mono","Lucida Console",monospace;
+	font-size: 14px;
+	font-size: 1.4rem;
+	line-height: 1.6;
+	margin: 0;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
