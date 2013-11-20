@@ -35,7 +35,9 @@ $(document).ready(function(){
   	
   	var body = $('body');
   	
-  	parent.resizeiframe(body.attr('id'), body.scrollHeight);
+  	console.log(body[0].scrollHeight);
+  	
+  	parent.resizeiframe(body.attr('id'), body[0].scrollHeight);
   
   });
 
