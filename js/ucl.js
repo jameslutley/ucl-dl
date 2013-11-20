@@ -37,7 +37,9 @@ viewsource = function () {
 																		.replace(/\t/g, '  ')
 																		.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>');
 	
-	$('body').addClass('view-source').empty().append( '<pre>' + patternhtml + '</pre>' );
+	$('body').addClass('view-source').empty().append( '<pre class="prettyprint">' + patternhtml + '</pre>' );
+	
+	prettyPrint();
 
 };
 
