@@ -31,11 +31,9 @@ $(document).ready(function(){
   if (window.location.href.match('#view-source')) viewsource();
   
   // resize parent page's iframe
-  $('html').load(function () {
+  $(window).load(function () {
   	
   	var body = $('body');
-  	
-  	console.log(body[0].scrollHeight);
   	
   	parent.resizeiframe(body.attr('id'), body[0].scrollHeight);
   
