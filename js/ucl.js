@@ -18,11 +18,31 @@ $(document).ready(function(){
 
 	var allPanels = $('.accordion > dd').hide();
     
-  $('.accordion > dt > a').click(function() {
-    allPanels.slideUp();
-    $(this).parent().next().slideDown();
-    return false;
+  $('.accordion > dt > a').click(function(e) {
+  
+		allPanels.slideUp();
+		$(this).parent().next().slideDown();
+		
+		prevent(e);
+   
   });
-
+  
+  if (window.location.href.match('#view-source')) viewsource();
 
 });
+
+viewsource = function () {
+
+	var patternhtml = $('body').html().replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
+																		.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>');
+	
+	$('body').empty().append( '<pre>' + patternhtml + '</pre>' );
+
+};
+
+prevent = function (e) {
+
+	if (e.preventDefault) e.preventDefault();
+	else event.returnValue = false;
+
+};
