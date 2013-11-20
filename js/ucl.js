@@ -33,7 +33,9 @@ $(document).ready(function(){
   // resize parent page's iframe
   $('html').load(function () {
   	
-  	parent.resizeiframe($(this).find('body').attr('id'), document.body.scrollHeight);
+  	var body = $('body');
+  	
+  	parent.resizeiframe(body.attr('id'), body.scrollHeight);
   
   });
 
@@ -47,7 +49,7 @@ viewsource = function () {
 																		.replace(/\t/g, '  ')
 																		.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>');
 	
-	body.attr().addClass('view-source').empty().append( '<pre class="prettyprint">' + patternhtml + '</pre>' );
+	body.attr('id', bodyid).addClass('view-source').empty().append( '<pre class="prettyprint">' + patternhtml + '</pre>' );
 	
 	prettyPrint();
 
