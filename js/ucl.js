@@ -27,17 +27,27 @@ $(document).ready(function(){
    
   });
   
+  // switch to view source
   if (window.location.href.match('#view-source')) viewsource();
+  
+  // resize parent page's iframe
+  $('html').load(function () {
+  	
+  	parent.resizeiframe($(this).find('body').attr('id'), document.body.scrollHeight);
+  
+  });
 
 });
 
 viewsource = function () {
 
-	var patternhtml = $('body').html().replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
+	var body = $('body'),
+			bodyid = body.attr('id').replace('-view', '-markup'),
+			patternhtml = body.html().replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
 																		.replace(/\t/g, '  ')
 																		.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>');
 	
-	$('body').addClass('view-source').empty().append( '<pre class="prettyprint">' + patternhtml + '</pre>' );
+	body.attr().addClass('view-source').empty().append( '<pre class="prettyprint">' + patternhtml + '</pre>' );
 	
 	prettyPrint();
 
