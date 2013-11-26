@@ -564,7 +564,7 @@ audio {
 @font-face {
   font-family: 'HelveticaNeueLTStd-Bd';
   src: url("../fonts/2794C7_0_0.eot");
-  src: url("http://markboultondesign.github.io/ucl-dl/fonts/2794C7_0_0.eot?#iefix") format("embedded-opentype"), url("http://markboultondesign.github.io/ucl-dl/fonts/2794C7_0_0.woff") format("woff"), url("http://markboultondesign.github.io/ucl-dl/webfonts/2794C7_0_0.ttf") format("truetype"); }
+  src: url("../fonts/2794C7_0_0.eot?#iefix") format("embedded-opentype"), url("../fonts/2794C7_0_0.woff") format("woff"), url("../webfonts/2794C7_0_0.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'HelveticaNeueLTStd-Roman';
