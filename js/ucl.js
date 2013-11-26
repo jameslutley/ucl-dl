@@ -26,34 +26,8 @@ $(document).ready(function(){
 		prevent(e);
    
   });
-  
-  // switch to view source
-  if (window.location.href.match('#view-source')) viewsource();
-  
-  // resize parent page's iframe
-  $(window).load(function () {
-  	
-  	var body = $('body');
-  	
-  	parent.resizeiframe(body.attr('id'), body[0].scrollHeight);
-  
-  });
 
 });
-
-viewsource = function () {
-
-	var body = $('body'),
-			bodyid = body.attr('id').replace('-view', '-markup'),
-			patternhtml = body.html().replace(/[<>]/g, function(m) { return {'<':'&lt;','>':'&gt;'}[m]})
-																		.replace(/\t/g, '  ')
-																		.replace(/((ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?)/gi,'<a href="$1">$1</a>');
-	
-	body.attr('id', bodyid).addClass('view-source').empty().append( '<pre class="prettyprint">' + patternhtml + '</pre>' );
-	
-	prettyPrint();
-
-};
 
 prevent = function (e) {
 
