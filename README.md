@@ -1,14 +1,13 @@
-UCL Design Language
+# UCL Design Language
 
 The UCL Design Language repository contains:
 
-	•	All individual patterns, saved as separate .html files
-	•	The foundation Sass
-	•	The CSS output
-	•	Web fonts 
-	•	Global images
-	•	Javascript
-
+* All individual patterns, saved as separate .html files
+* The foundation Sass
+* The CSS output
+* Web fonts 
+* Global images
+* Javascript
 
 The following steps will describe how to use the existing design language foundation to create a new UCL website.
 
